@@ -91,7 +91,7 @@ def sendInlineMessageForBookingTime(chat_id):
                             [{'text':'18:00'}],
                             ]}
     else:
-        return sendMessage(chat_id,'Please try again tmr')
+        return sendMessage(chat_id,'Please try again tomorrow')
     #----------------------------------------------------------------------------------------------------
     key=json.JSONEncoder().encode(keyboard)
     url='https://api.telegram.org/bot'+str(api_key)+'/sendmessage?chat_id='+str(chat_id)+'&text='+str(text_message)+'&reply_markup='+key
