@@ -49,22 +49,22 @@ def book_timeslot(event_description,booking_time,input_email):
     events = events_result.get('items', [])
     if not events:
         event = {
-        'summary': 'Appuntamento taglio',
-        'location': 'Italy',
+        'summary': 'Doctors Appointment',
+        'location': 'Singapore',
         'description': str(event_description) + 'with AutomationFeed',
         'start': {
         'dateTime': start_time,
-        'timeZone': 'Europe/Italy',
+        'timeZone': 'Asia/Singapore',
         },
         'end': {
         'dateTime': end_time,
-        'timeZone': 'Europe/Italy',
+        'timeZone': 'Asia/Singapore',
         },
         'recurrence': [
         'RRULE:FREQ=DAILY;COUNT=1'
         ],
         'attendees': [
-        {'email': 'botparrutelegram@gmail.com'},
+        {'email': 'automationfeed@gmail.com'},
         {'email': str(input_email)},
         ],
         'reminders': {
@@ -88,22 +88,22 @@ def book_timeslot(event_description,booking_time,input_email):
                 return False
         # -------------------- Break out of for loop if there are no apppointment that has the same time ----------
         event = {
-        'summary': 'Appuntamento taglio',
-        'location': 'Italy',
+        'summary': 'Hair Cut Appointment',
+        'location': 'Singapore',
         'description': str(event_description) + 'with AutomationFeed',
         'start': {
         'dateTime': start_time,
-        'timeZone': 'Europe/Italy',
+        'timeZone': 'Asia/Singapore',
         },
         'end': {
         'dateTime': end_time,
-        'timeZone': 'Europe/Italy',
+        'timeZone': 'Asia/Singapore',
         },
         'recurrence': [
         'RRULE:FREQ=DAILY;COUNT=1'
         ],
         'attendees': [
-        {'email': 'botparrutelegram@gmail.com'},
+        {'email': 'Multisepcialityhospital@gmail.com'},
         {'email': str(input_email)},
         ],
         'reminders': {
