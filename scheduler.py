@@ -88,7 +88,7 @@ def book_timeslot(event_description,booking_time,input_email):
                 return False
         # -------------------- Break out of for loop if there are no apppointment that has the same time ----------
         event = {
-        'summary': 'Hair Cut Appointment',
+        'summary': 'Doctors Appointment',
         'location': 'Singapore',
         'description': str(event_description) + 'with AutomationFeed',
         'start': {
