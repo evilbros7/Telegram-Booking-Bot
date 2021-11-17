@@ -45,10 +45,11 @@ def sendMessage(chat_id,text_message):
     return response
 
 def sendInlineMessageForService(chat_id):
-    text_message='Hi! I am your Hair Sylist Bot!\nI can help you book an appointment.\n\nYou can control me using these commands\n\n/start-to start chatting with the bot\n/cancel-to stop chatting with the bot.\n\nFor more information please contact automationfeed@gmail.com'
+    text_message='Hi! I am your Hair Sylist Bot!\nI can help you book an appointment.\n\nYou can control me using these commands\n\n/start-to start chatting with the bot\n/cancel-to stop chatting with the bot.\n\nFor more information please contact MultiSpecialityHospital@gmail.com'
     keyboard={'keyboard':[
-                        [{'text':'Cut'},{'text':'Dye'}],
-                        [{'text':'Perm'},{'text':'Reborn'}]
+                        [{'text':'General Physician'},{'text':'Cardiologist'}],
+                        [{'text':'Dentist'},{'text':'Dermatologists'}],
+                        [{'text':'Gynecologists'},{'text':'Orthopedic Surgeons'}]
                         ]}
     key=json.JSONEncoder().encode(keyboard)
     url='https://api.telegram.org/bot'+str(api_key)+'/sendmessage?chat_id='+str(chat_id)+'&text='+str(text_message)+'&reply_markup='+key
@@ -110,7 +111,7 @@ def run():
         else:
             if current_last_msg=='/start':
                 sendInlineMessageForService(chat_id)   
-            if current_last_msg in ['Cut','Dye','Perm','Reborn']:
+            if current_last_msg in ['General Physician','Cardiologist','Dermatologists','Gynecologists','Orthopedic Surgeons':
                 event_description=current_last_msg
                 sendInlineMessageForBookingTime(chat_id)
             if current_last_msg in ['08:00','10:00','12:00','14:00','16:00','18:00']:
@@ -128,11 +129,11 @@ def run():
                     input_email=current_last_msg
                     response=book_timeslot(event_description,booking_time,input_email)
                     if response == True:
-                        sendMessage(chat_id,f"Appointment is booked.See you at {booking_time}")
+                        sendMessage(chat_id,f"Appointment is booked. Take Care..!!See you at {booking_time}")
                         continue
                     else:
                         update_id_for_booking_of_time_slot=''
-                        sendMessage(chat_id,"Please try another timeslot and try again tomorrow")
+                        sendMessage(chat_id,"Please try another timeslot Or  try again tomorrow")
                         continue
                 else:
                     sendMessage(chat_id,"Please enter a valid email.\nEnter /cancel to quit chatting with the bot\nThanks!")
