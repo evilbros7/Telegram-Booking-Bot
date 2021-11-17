@@ -111,7 +111,7 @@ def run():
         else:
             if current_last_msg=='/start':
                 sendInlineMessageForService(chat_id)   
-            if current_last_msg in ['General Physician','Cardiologist','Dermatologists','Gynecologists','Orthopedic Surgeons':
+            if current_last_msg in ['General Physician','Cardiologist','Dermatologists','Gynecologists','Orthopedic Surgeons']
                 event_description=current_last_msg
                 sendInlineMessageForBookingTime(chat_id)
             if current_last_msg in ['08:00','10:00','12:00','14:00','16:00','18:00']:
