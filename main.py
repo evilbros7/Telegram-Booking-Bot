@@ -23,9 +23,9 @@ def getLastMessage():
     url = "https://api.telegram.org/bot{}/getUpdates".format(api_key)
     response = requests.get(url)
     data=response.json()
-    last_msg=data['result'][len(data['result'])-1]['message']['text']
-    chat_id=data['result'][len(data['result'])-1]['message']['chat']['id']
-    update_id=data['result'][len(data['result'])-1]['update_id']
+    last_msg=data.get['result'][len(data['result'])-1]['message']['text']
+    chat_id=data.get['result'][len(data['result'])-1]['message']['chat']['id']
+    update_id=data.get['result'][len(data['result'])-1]['update_id']
     if len(data['result']) < 100:
         return last_msg,chat_id,update_id
     else:
